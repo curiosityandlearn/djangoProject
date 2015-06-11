@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from blog import views
 
 urlpatterns = [
+    url(r'^$', 'blog.views.homepage'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^blog/', include('blog.urls')),
+    url(r'^formapp/',include('formapp.urls')),
     url(r'^accounts/login/$','django.contrib.auth.views.login'), 
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/blog'}),
 ]
