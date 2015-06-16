@@ -1,8 +1,7 @@
-from django import forms
 from .models import Software_service
+from django.forms import ModelForm
 
-class ServiceForm(forms.ModelForm):
-
+class ServiceForm(ModelForm):
     class Meta:
         model = Software_service
-        fields = ('taobao_id','ding_dan_hao','xian_xia_ke_hu','ping_ju')
+        fields = ['taobao_id','sex']
