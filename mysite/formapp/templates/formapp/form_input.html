@@ -1,15 +1,33 @@
+{% load staticfiles %}
+
 <html>
     <head>
         <title>KuruDe</title>
     </head>
     <body> 
-        <h1>软件服务</h1>
+    
+    
+        <h1 style="text-align:center">软件服务</h1>
 
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">生成</button>
+        	{% for field in form %}
+        	<table border="1" align="center">
+            	<tr>
+                	<td align="center" valign="middle" width=35%>{{ field.label  }}</td>
+                	<td>{{ field }}</td>
+            	</tr>
+            {% endfor %}
+            </table>
+            
+			<link rel="stylesheet" href="{% static 'css/style.css' %}" />           
+            <div class="wrapper">
+            	<button type="submit">生成</button>
+            </div>
         </form>
+        
+        <div style="text-align:center">
         <a href="http://127.0.0.1:8000/formapp/data_inquiry/">查询数据</a>
+        </div>
         
     </body>
 </html>

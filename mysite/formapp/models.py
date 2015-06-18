@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from sqlite3 import datetime
 
 
 SOFTWARE_TYPE = (
@@ -22,6 +23,7 @@ class Software_service(models.Model):
     remark = models.CharField("备注", max_length=200, blank=True)
     software_type = models.CharField("*软件类型", max_length=10, choices=SOFTWARE_TYPE,null=False,blank=False)
     serve_time = models.CharField("*服务时间", max_length=10, choices=SERVE_TIME,null=False,blank=False)
+    start_date = models.DateTimeField(default=datetime.datetime.now)
 
 
     def __unicode__(self):

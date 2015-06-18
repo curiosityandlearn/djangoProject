@@ -1,24 +1,42 @@
 <html>
-<table>
-    <tr>
-        <th>淘宝ID</th>
-        <th>订单号</th>
-        <th>线下客户</th>
-        <th>凭证</th>
-        <th>备注</th>
-        <th>软件类型</th>
-        <th>服务时间</th>
-    </tr>
-    {% for item in query_results %}
-    <tr> 
-        <td>{{ item.taobao_id }}</td>
-        <td>{{ item.order_number }}</td>
-		<td>{{ item.offline_clients }}</td>
-		<td>{{ item.credential }}</td>
-        <td>{{ item.remark }}</td>
-        <td>{{ item.software_type }}</td>
-        <td>{{ item.serve_time }}</td>
-    </tr>
-    {% endfor %}
-</table>
+   <head>
+        <title>KuruDe</title>
+   </head>
+   <body>
+   		<h1 style="text-align:center">服务查询</h1>
+   
+		<table border="1" align="center">
+		    <tr>
+		        <th>淘宝ID</th>
+		        <th>订单号</th>
+		        <th>线下客户</th>
+		        <th>凭证</th>
+		        <th>备注</th>
+		        <th>软件类型</th>
+		        <th>开始时间</th>
+		        <th>服务时间</th>
+		        <th>到期时间</th>
+		        <th>申请人</th>
+		    </tr>
+		    
+			{% for item in query_results %}
+    		<tr align="center" valign="middle" > 
+		        <td>{{ item.taobao_id }}</td>
+		        <td>{{ item.order_number }}</td>
+				<td>{{ item.offline_clients }}</td>
+				<td>{{ item.credential }}</td>
+		        <td>{{ item.remark }}</td>        
+		        <td>{{ item.get_software_type_display }}</td>
+		        <td>{{ item.start_date|date }}</td>
+		        <td>{{ item.get_serve_time_display }}</td>
+		        <td>{{ item.start_date|date }}</td>
+		        <td></td>
+    		</tr>
+   			{% endfor %}
+   			
+		</table>
+
+
+
+	</body>
 </html>
