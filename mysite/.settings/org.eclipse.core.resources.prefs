@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//blog/migrations/0001_initial.py=utf-8
+encoding//formapp/migrations/0004_auto_20150611_2142.py=utf-8
+encoding//formapp/migrations/0005_auto_20150617_2136.py=utf-8
+encoding//formapp/migrations/0007_auto_20150617_2144.py=utf-8
+encoding//formapp/models.py=utf-8
+encoding//formapp/templates/formapp/form_input.html=UTF-8
